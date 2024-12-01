@@ -20,6 +20,8 @@ public class AsteroidController : MonoBehaviour
     [SerializeField]
     private Sprite sprite4;
 
+    [SerializeField]
+    private AudioClip destroySound;
 
     private int splitDepth;
 
@@ -97,10 +99,11 @@ public class AsteroidController : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullets"))
         {
             Debug.Log("Asteroid hit by bullet!");
-            //Destroy(collision.gameObject);
+            AudioSource.PlayClipAtPoint(destroySound, new Vector3(0, 0, -10));
             Split();
             score+= 1;
             Debug.Log(score);
+            
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))

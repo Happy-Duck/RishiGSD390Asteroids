@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class StartScript : MonoBehaviour
@@ -6,6 +7,12 @@ public class StartScript : MonoBehaviour
 
     [SerializeField]
     private TextMesh endText;
+
+    [SerializeField]
+    AudioClip winSound;
+
+    [SerializeField]
+    AudioClip loseSound;
 
     // Update is called once per frame
     void Update()
@@ -20,13 +27,19 @@ public class StartScript : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
+    }
+
+    private void Start()
+    {
         if (AsteroidController.score < PlayerMover.winScore)
         {
             endText.text = "You Lost";
+            gameObject.GetComponent<AudioSource>().PlayOneShot(loseSound);
         }
         else
         {
             endText.text = "You Won!";
+            gameObject.GetComponent<AudioSource>().PlayOneShot(winSound);
         }
     }
 }

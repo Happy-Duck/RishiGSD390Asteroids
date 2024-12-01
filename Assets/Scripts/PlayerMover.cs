@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -56,6 +57,7 @@ public class PlayerMover : MonoBehaviour
             bulletInstance.transform.position = transform.position;
             var bulletRigidbody = bulletInstance.GetComponent<Rigidbody2D>();
             bulletRigidbody.linearVelocity = gameObject.transform.up * bulletSpeed;
+            gameObject.GetComponent<AudioSource>().Play();
         }
 
         if (AsteroidController.score >= winScore)
