@@ -9,7 +9,7 @@ public class AsteroidController : MonoBehaviour
     private GameObject asteroidPrefab;
 
     [SerializeField]
-    public static float asteroidSpeed = 100;
+    public static float asteroidSpeed = 250;
 
     [SerializeField]
     private Sprite sprite1;
@@ -22,13 +22,18 @@ public class AsteroidController : MonoBehaviour
 
     [SerializeField]
     private AudioClip destroySound;
+    [SerializeField]
+    private AudioClip lifeLostSound;
 
     private int splitDepth;
 
     public static int score = 0;
 
+    
+
     private void Awake()
     {
+
         int AsteroidSpriteNum = Random.Range(1, 4);
 
         if (AsteroidSpriteNum == 1)
@@ -108,9 +113,9 @@ public class AsteroidController : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            SceneManager.LoadScene(2);
+            PlayerMover.lives--;
+            AudioSource.PlayClipAtPoint(lifeLostSound, new Vector3(0, 0, -10));
         }
-
 
         Destroy(gameObject);
 

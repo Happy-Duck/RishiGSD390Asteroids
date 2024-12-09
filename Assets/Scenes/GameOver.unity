@@ -150,9 +150,9 @@ TextMesh:
   m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 300
+  m_FontSize: 250
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 344042985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.07, y: 2.87, z: 0}
+  m_LocalPosition: {x: -5.17, y: 2.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -373,6 +373,7 @@ MonoBehaviour:
   endText: {fileID: 344042986}
   winSound: {fileID: 8300000, guid: e47166645683c5849a9c72f8784e23f4, type: 3}
   loseSound: {fileID: 8300000, guid: a5ddeb85667784c48bc9923756ef4d31, type: 3}
+  lifeLostSound: {fileID: 8300000, guid: 1ddf6e4b447d3cf41bd22566c24fd2d3, type: 3}
 --- !u!82 &1170469089
 AudioSource:
   m_ObjectHideFlags: 0

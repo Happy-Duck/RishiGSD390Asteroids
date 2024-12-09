@@ -13,7 +13,7 @@ public class PlayerMover : MonoBehaviour
     private float turnSpeed = 10;
 
     [SerializeField]
-    public static int winScore = 20;
+    public static int winScore = 30;
 
     [SerializeField]
     private GameObject bullet;
@@ -26,10 +26,20 @@ public class PlayerMover : MonoBehaviour
 
     private Rigidbody2D rigidbody = new Rigidbody2D();
 
+    public static int lives = 3;
+
+    [SerializeField] private GameObject life1;
+    [SerializeField] private GameObject life2;
+    [SerializeField] private GameObject life3;
+
     void Awake()
     {
         AsteroidController.score = 0;
         rigidbody = GetComponent<Rigidbody2D>();
+        life1.SetActive(true);
+        life2.SetActive(true);
+        life3.SetActive(true);
+        lives = 3;
     }
 
     void FixedUpdate()
@@ -61,6 +71,19 @@ public class PlayerMover : MonoBehaviour
         }
 
         if (AsteroidController.score >= winScore)
+        {
+            SceneManager.LoadScene(2);
+        }
+
+        if (lives == 2)
+        {
+            life1.SetActive(false);
+        }
+        else if (lives == 1)
+        {
+            life2.SetActive(false);
+        }
+        else if (lives < 1)
         {
             SceneManager.LoadScene(2);
         }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6104078526863206962}
   - component: {fileID: 4622420145375311334}
   - component: {fileID: -8883333140872247235}
+  - component: {fileID: 457755417873619113}
   m_Layer: 7
   m_Name: Asteroid
   m_TagString: Untagged
@@ -172,6 +173,7 @@ MonoBehaviour:
   sprite3: {fileID: 40701928262675801, guid: 1ca2e77009791b040901a736f772f5c7, type: 3}
   sprite4: {fileID: -1337382102042332801, guid: c7a462947fef5e140b24bbe7eb40ebd0, type: 3}
   destroySound: {fileID: 8300000, guid: cf93f6a653450e24dbdf6f8cd2a1a4df, type: 3}
+  lifeLostSound: {fileID: 8300000, guid: 1ddf6e4b447d3cf41bd22566c24fd2d3, type: 3}
 --- !u!82 &-8883333140872247235
 AudioSource:
   m_ObjectHideFlags: 0
@@ -269,3 +271,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &457755417873619113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097510231848892215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85a0e17be182724094408a37b62b27a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

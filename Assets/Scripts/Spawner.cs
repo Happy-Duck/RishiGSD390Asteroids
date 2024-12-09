@@ -18,14 +18,24 @@ public class Spawner : MonoBehaviour
         if (timer < 0)
         {
             var newAsteroid = Instantiate(asteroid);
-            newAsteroid.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-4, 4), 0);
-            if (Vector3.Distance(newAsteroid.transform.position, player.transform.position) < 1)
-            {
-                Destroy(newAsteroid);
-            }
-            {
 
+            int side = Random.Range(0, 3);
+
+            if (side == 0)
+            {
+                newAsteroid.transform.position = new Vector3(-8, Random.Range(-4, 4), 0);
+            } else if (side == 1)
+            {
+                newAsteroid.transform.position = new Vector3(8, Random.Range(-4, 4), 0);
             }
+            else if (side == 2)
+            {
+                newAsteroid.transform.position = new Vector3(Random.Range(-8, 8), 7, 0);
+            } else if (side == 3)
+            {
+                newAsteroid.transform.position = new Vector3(Random.Range(-8, 8), -7, 0);
+            }
+
             newAsteroid.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitSphere * AsteroidController.asteroidSpeed);
             timer = Random.Range(1, 3);
         }

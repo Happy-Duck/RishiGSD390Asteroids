@@ -14,6 +14,10 @@ public class StartScript : MonoBehaviour
     [SerializeField]
     AudioClip loseSound;
 
+    [SerializeField]
+    AudioClip lifeLostSound;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +38,8 @@ public class StartScript : MonoBehaviour
         if (AsteroidController.score < PlayerMover.winScore)
         {
             endText.text = "You Lost";
-            gameObject.GetComponent<AudioSource>().PlayOneShot(loseSound);
+            AudioSource.PlayClipAtPoint(loseSound, new Vector3 (0, 0, 0));
+            gameObject.GetComponent<AudioSource>().PlayOneShot(lifeLostSound);
         }
         else
         {
